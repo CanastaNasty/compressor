@@ -63,12 +63,23 @@
       "mode": "100644",
       "content": "var fs = require(\"fs\");\nvar output = {};\n\nnames = fs.readdirSync(\".\")\nnames.forEach(function (value) {\n  content = fs.readFileSync(value, \"utf8\");\n\toutput[value] = content;\n})\n\nfs.writeFileSync(\"../Jason.json\", JSON.stringify(output, null, 2))",
       "type": "blob"
+    },
+    "extract.js": {
+      "path": "extract.js",
+      "mode": "100644",
+      "content": "var fs = require(\"fs\");\n\nObject.keys(data).forEach(function (value) {\n  fs.writeFileSync(value, data[value])\n});",
+      "type": "blob"
     }
   },
   "distribution": {
     "compress": {
       "path": "compress",
       "content": "var fs = require(\"fs\");\nvar output = {};\n\nnames = fs.readdirSync(\".\")\nnames.forEach(function (value) {\n  content = fs.readFileSync(value, \"utf8\");\n\toutput[value] = content;\n})\n\nfs.writeFileSync(\"../Jason.json\", JSON.stringify(output, null, 2))",
+      "type": "blob"
+    },
+    "extract": {
+      "path": "extract",
+      "content": "var fs = require(\"fs\");\n\nObject.keys(data).forEach(function (value) {\n  fs.writeFileSync(value, data[value])\n});",
       "type": "blob"
     }
   },
